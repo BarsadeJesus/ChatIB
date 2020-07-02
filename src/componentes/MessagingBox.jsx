@@ -12,7 +12,7 @@ const MessagingBox = ({getMessage}) => {
   }
   return(
       <div>
-         <textarea onKeyDown={messageHandler}></textarea>
+         <textarea class="form-control" id="exampleFormControlTextarea5" rows="5" onKeyDown={messageHandler}></textarea>
         {/*  <DisplayConversations message={message}/> */}
       </div>
   )

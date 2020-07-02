@@ -2,24 +2,16 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 //import Chat from './componentes/Chat'
+/* import Menu from './componentes/Menu'
 import Login from './componentes/Login'
-import MessagingPanel from './componentes/MessagingPanel'
+import MessagingPanel from './componentes/MessagingPanel' */
+import './css/App.css'
+import Router from './Route'
 
 function App() {
-  const [userName, setUserName] = useState(null)
-  const getUserName = (name) => {
-    setUserName(name)
-  }
+  
   return (
-    <div className="App">
-      {
-        !userName?
-        <Login getUserName={getUserName} />
-        :
-        <MessagingPanel userName={userName}/>
-      }
-     
-    </div>
+   <Router/>
   );
 }
 

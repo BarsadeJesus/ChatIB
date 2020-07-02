@@ -1,27 +1,33 @@
 import React from 'react'
+import {Input, Label, Button} from '../styles'
 
 const Login = ({getUserName}) => {
-    const userName = getUserName
-    
+    const userNam = getUserName
+     
     const login = (e) => {
         e.preventDefault();
-        userName(e.target.username.value)
+        getUserName(e.target.username.value)
     }
     return (
-        <div id="login">
-            <form onSubmit={login}>
-                <label>Nombre de usuario </label>
-                <input 
-                    type="text" 
-                    id="username"
-                    placeholder="Escribe tu nombre"
-                />
-                <div className="button-div">
-                    <button type="submit" >Iniciar sesión</button>
-                </div>
-            </form>
-        </div>
+      <div id="login">
+      <form onSubmit={login}>
+         <label for="exampleForm2">Nombre de usuario </label><span />
+          <Input 
+              class="form-control"
+              type="text" 
+              id="username"
+              placeholder="Escribe tu nombre"
+          />
+          <br />
+          <div className="button-div">
+              <Button type="submit" onClick="updateArray" >Iniciar sesión</Button>
+          </div>
+      </form>
+  </div>
+       
+        
     
     )
+    
 }
 export default Login
