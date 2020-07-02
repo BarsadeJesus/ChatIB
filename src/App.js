@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+//import Chat from './componentes/Chat'
+import Login from './componentes/Login'
+import MessagingPanel from './componentes/MessagingPanel'
 
 function App() {
+  const [userName, setUserName] = useState(null)
+  const getUserName = (name) => {
+    setUserName(name)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        !userName?
+        <Login getUserName={getUserName} />
+        :
+        <MessagingPanel userName={userName}/>
+      }
+     
     </div>
   );
 }
